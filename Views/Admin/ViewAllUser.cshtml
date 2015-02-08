@@ -1,0 +1,32 @@
+﻿@model IEnumerable<EAD_Project.Models.USER>
+
+@{
+    ViewBag.Title = "ViewAllUser";
+}
+
+                    <h1 style=" margin-left: 250px">List of all user's</h1>
+                        <table style=" margin-left: 250px" cellspacing="15" cellpadding="15" border="1">
+                            <tr>
+                                <th>NAME</th>
+                                <th>EMAIL</th>
+                                <th>PASSWORD</th>
+                                <th>UPDATE</th>
+                                <th>REMOVE</th>
+                            </tr>
+
+                            @foreach(var u in Model)
+                            {
+                                <tr>
+                                <td>@u.name   </td>
+                                <td>@u.email    </td>
+                                <td>@u.password   </td>
+                               
+                               <td>@Html.ActionLink("Updata", "update_user",new { email =u.email })</td> 
+                               <td>@Html.ActionLink("Remove", "remove_user",new { email =u.email })</td>
+                                                      
+                             
+                            </tr>
+
+                                
+                            }
+                        </table>

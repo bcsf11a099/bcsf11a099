@@ -1,0 +1,23 @@
+﻿@model IEnumerable<EAD_Project.Models.product> 
+
+@{
+    ViewBag.Title = "Mobile_Brands";
+}
+
+<div class="row-fluid">
+ @foreach(var u in Model)
+{
+           <div class="span3">
+ 
+            <center>
+                <a data-toggle="modal" href="#myModal"><img  src="~/Images/@u.image" /></a>
+                
+                <br /><br />
+
+                <a class="btn" style="width:120px;" href="#">@u.name<br /> @u.price</a>
+            </center>
+        </div>
+ }
+        
+        
+</div>
